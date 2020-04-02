@@ -32,7 +32,7 @@ int main() {
 		auto t1 = high_resolution_clock::now();
 
 		cilk_for (int j = 0; j < borders.size()-1; j++) {
-			res += integral(borders[j], borders[j+1], i);
+			res += compute(borders[j], borders[j+1], i);
 		}
 
 		auto t2 = high_resolution_clock::now();
