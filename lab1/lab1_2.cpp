@@ -89,9 +89,13 @@ int main() {
 
 	std::cout << "\t=== WinAPI Parallelization ===" << std::endl;
 	for (int i = 100; i < 10000001; i *= 10) {
+		std::cout << "No threads:" << std::endl;
 		compute(i);
+		std::cout << "Qpar threads:" << std::endl;
 		compute_qpar(i);
+		std::cout << "No vector:" << std::endl;
 		compute_novector(i);
+		std::cout << "============================================================" << std::endl;
 	}
 
 	std::cout << "\t=== Normal Parallelization ===" << std::endl;
