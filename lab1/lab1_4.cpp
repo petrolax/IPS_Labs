@@ -30,7 +30,7 @@ int main () {
 		double res{0.0};
 		auto t1 = high_resolution_clock::now();
 
-		tbb::parallel_for_each(Borders.begin(), Borders.end()-1,[&](double n) {
+		tbb::parallel_for_each(borders.begin(), borders.end()-1,[&](double n) {
 			res += compute(n, n+0.1, i);
 		});
 
