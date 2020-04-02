@@ -31,7 +31,7 @@ int main () {
 		auto t1 = high_resolution_clock::now();
 
 		tbb::parallel_for_each(Borders.begin(), Borders.end()-1,[&](double n) {
-			res += integral(n, n+0.1, i);
+			res += compute(n, n+0.1, i);
 		});
 
 		auto t2 = high_resolution_clock::now();
