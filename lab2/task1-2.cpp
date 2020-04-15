@@ -1,4 +1,4 @@
-﻿#include <cilk/cilk.h>
+#include <cilk/cilk.h>
 #include <cilk/cilk_api.h>
 #include <cilk/reducer_max.h>
 #include <cilk/reducer_min.h>
@@ -23,7 +23,7 @@ void ReducerMaxTest(int *mass_pointer, const long size)
 	{
 		maximum->calc_max(i, mass_pointer[i]);
 	}
-	printf("Maximal element = %d has index = %d\n\n",
+	printf("Maximal element = %d has index = %d\n",
 		maximum->get_reference(), maximum->get_index_reference());
 }
 /*
@@ -40,7 +40,7 @@ void ReducerMinTest(int *mass_pointer, const long size)
 	{
 		minimum->calc_min(i, mass_pointer[i]);
 	}
-	printf("Minimal element = %d has index = %d\n\n",
+	printf("Minimal element = %d has index = %d\n",
 		minimum->get_reference(), minimum->get_index_reference());
 }
 
@@ -80,10 +80,15 @@ int main()
 	
 	mass_begin = mass;
 	mass_end = mass_begin + mass_size;
+	
+	std::cout << "Size: " << mass_size << endl;
+	std::cout << std::endl;
 
 	std::cout << "Before sorting: " << std::endl;
 	ReducerMaxTest(mass, mass_size);
 	ReducerMinTest(mass, mass_size);
+
+	std::cout << std::endl;
 
 	ParallelSort(mass_begin, mass_end);
 
