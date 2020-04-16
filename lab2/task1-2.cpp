@@ -31,7 +31,6 @@ void ReducerMaxTest(int *mass_pointer, const long size)
  * Функция ReducerMinTest определяет минимальный элемент массива
  * @param mass_pointer - указатель на целочисленный массив
  * @param size - кол-во элементов массива
- * @return Ничего не возвращает, но выводит строку данных в stdout
 */
 void ReducerMinTest(int *mass_pointer, const long size)
 {
